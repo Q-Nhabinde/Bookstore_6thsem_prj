@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove</title>
+    <style>
+       
+       .container{
+            margin: 0 20%;
+            background-color: bisque;
+            padding: 40px;
+       }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            margin: 10px 70px;
+            width: 100px;
+            background-color: rgb(217, 255, 0);
+            border-color: aliceblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/remove" method="post">
+            <div>
+                <label for="bookId">Book ID:</label>
+                <input type="number" id="bookId" name="bookId" required>
+            </div>
+            <button type="submit">Remove Book</button>
+        </form>
+
+    </div>
+    
+</body>
+
+</html>

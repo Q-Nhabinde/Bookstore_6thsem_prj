@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search-book</title>
+    <style>
+        .book-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: calc(33.33% - 20px);
+            padding: 3px;
+            text-align: center;
+        }
+
+        .book-card img {
+            width: 300px;
+            height: 350px;
+            margin-bottom: 10px;
+        }
+
+        .book-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .book-price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart {
+            padding: 8px 12px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book-card">
+        <% book_list.forEach((book) => { %>
+        <img src="/images/<%= book.image_url %>.JPG" alt="Book 1">
+            <div class="book-info">
+                <h3 class="book-title">
+                    <%= book.title %>
+                </h3>
+                <p class="book-author">
+                    <%= book.author %>
+                </p>
+                <p class="book-price">
+                    <%= book.price %>
+                </p>
+                <form method="post" action="/cart">
+                    <input type="hidden" name="bookId" value="<%= book.id %>">
+                    <!-- <input class="add-to-cart" type="submit" value="Add to Cart"> -->
+                    <button class="add-to-cart">Add to Cart</button>
+                </form>
+            </div>
+           <% }); %> 
+    </div>
+    
+</body>
+</html>

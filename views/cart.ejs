@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+    div{
+      background-color: beige;
+      /* width: 500px; */
+      text-align: center;
+      margin-left: 20%;
+      margin-right: 20%;
+      padding: 30px 0;
+    }
+    h1{
+      color: green;
+    }
+   
+    table, th,td{
+      padding: 20px;
+    }
+    th{
+      background-color: brown;
+    }
+    a{
+      text-decoration: none;
+      color: rgb(142, 41, 142);
+    }
+    p{
+      color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Cart</h1>
+
+    <% if (items.length> 0) { %>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Price</th>
+        </tr>
+        <% for (let i=0; i < items.length; i++) { %>
+          <tr>
+            <td>
+              <%= items[i].title %>
+            </td>
+            <td>
+              <%= items[i].author %>
+            </td>
+            <td>$
+              <%= items[i].price %>
+            </td>
+          </tr>
+          <% } %>
+      </table>
+
+      <p>Total price: $<%= totalPrice %>
+      </p>
+
+      <a href="https://www.paypal.com/">Pay with PayPal</a>
+      <% } else { %>
+        <p>Your cart is empty.</p>
+        <% } %>
+  </div>
+
+</body>
+
+</html>
