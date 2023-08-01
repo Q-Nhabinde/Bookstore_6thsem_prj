@@ -24,12 +24,6 @@ app.use(session({
 }));
 
 
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// app.get('/', (req, res) => {
-//   res.render(path.join(__dirname, 'views', 'home.ejs'));
-// });
-
 app.get('/login', (req, res) => {
   res.render(path.join(__dirname, 'views', 'login.ejs'));
 });
